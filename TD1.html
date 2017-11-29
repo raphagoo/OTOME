@@ -1,0 +1,143 @@
+<!Doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>a_refaire</title>
+	</head>
+
+	<body>
+		<header>
+		<nav>
+			<ul>
+				<li><a href="https://www.google.fr">page du cours introweb</a></li>
+				<li><a href="http://www.ynov.com">edt L1 SF Maths / Maths info</a></li>
+				<li><a href="http://www.yahoo.fr">edt L1 SF Info</a></li>
+			</ul>
+		</nav>
+		<h1>introduction à html</h1>
+	</header>
+		<section id="definition">
+
+
+			<h2>définition</h2>
+			<p>HTML est défini par le consortium <a href="https://www.w3.org/">W3C</a>.<br>
+			<br>
+			HTML est une abbréviation pour Hyper Text Markup Language. HTML est un dérivé de SGML (Standard Generalized Markup Language) qui est un métalangage qui permet de définir des langages basés sur des balises. En fait, dès la version 2 de HTML, tout a été fait pour que HTML soit "compatible" avec SGML. Pour information, XML est une version simplifiée de SGML.</p>
+		</section>
+		<section id="cs">
+			<h2>caractères spéciaux</h2>
+			<br>
+
+			Les caractères spéciaux d'une URL doivent être codés selon leur code ascii (en hexa), notamment un espace par %20, % par %25, etc.
+			Une URL est une URI (Uniform Resource Identifier) qui, en plus d'identifier une ressource (ce que fait une URI), précise le moyen pour la manipuler.
+			<br>
+			<br>
+			Ainsi, un document (html) est disponible sur le réseau via une URL. Il est demandé et envoyé à une application cliente grâce au protocole http. Il ne reste plus qu'à l'application cliente (le navigateur) à interpréter le document. Ceci se fait par recherche de caractères particuliers : qui ouvre un "tag",les &amp; qui commencent les caractères spéciaux : <code>&amp;#code </code> ascii;. Parmis les caractères spéciaux, il y a :<br>
+			<br>
+			<ul>
+				<li><code>&amp;</code> / &amp; ;</li>
+				<li><code>&lt; </code> / &lt; ;</li>
+				<li><code>&gt; </code> /&gt; ;</li>
+				<li><code>&eacute; </code>/ &eacute; ;</li>
+				<li>note : les caractères s'obtiennent par la &+lettre+accent; les accents étant acute, grave, circ, cedil, tilde et aussi les ligatures avec lig, e.g. &aelig; / æ).La liste des caractères spéciaux est disponible sur le site du W3C.Voici un exemple de code html, qui utilise les caractères spéciaux :</li>
+			</ul>
+			<br>
+			La <a href="https://www.w3.org/TR/html5/syntax.html#named-character-references">liste des caractères spéciaux(nommés)</a> est disponible sur le site du W3C.<br>
+			<br>
+				Voici un exemple de code html,qui utilise les caractères spéciaux :<br>
+			<br>
+
+			<samp>
+			&lt;p&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="http://validator.w3.org/check?uri=referer"&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lien vers le validateur validator.w3.org<br>
+			<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;<br>
+			&lt;/p&gt;<br>
+			</samp>
+			<br>
+			<br>
+		</section>
+		<section id="imagesetliens">
+
+			<h2>liens et images</h2>
+			<br>
+		</section>
+		<section id="lesliens">
+			<h3>les liens</h3>
+			<br>
+			<br>
+			Un lien s'obtient par l'utilisation d'une balise <code>&lt;a&gt;</code> avec un texte descriptif du lien entre la balise ouvrante et la balise fermante et une cible (ou destination) grâce à l'attribut <code>href</code> de la balise.
+			<br>
+			<samp>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;le code suivant
+			<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="http://www.cevennes-couleurs.com/"&gt;magasin de vente de matérieux pour des travaux (peinture, sol, étanchéïté, etc.)&lt;/a&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;donne le résultat (seul le texte est visible) : <br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.cevennes-couleurs.com/">magasin de vente de matérieux pour des travaux (peinture, sol, étanchéïté, etc.)</a>
+			</samp>
+			<br>
+		</section>
+		<section id="lesimages">
+			<h3>les images</h3>
+			<br>
+
+			<p>Une image s'insère par l'utilisation d'une balise (sans texte) <code>&lt;img&gt;</code> grâce à 2 attributs : <code>src</code> qui désigne l'emplacement de l'image (là où est le fichier source) et alt qui fournit une description de l'image.</p>
+
+			<samp>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;le code suivant <br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="http://www.w3.org/html/logo/downloads/HTML5_Logo_32.png" alt="logo du w3c format pgn 32x32" /&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;donne le résultat (seule l'image est visible) : <br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://www.w3.org/html/logo/downloads/HTML5_Logo_32.png" alt="logo du w3c format pgn 32x32"><br>
+			</samp>
+			<br>
+
+			<p>Il est possible de spécifier la dimension de l'image par l'attribut width ou height (si un seul est utilisé, les proportions sont respectées). Plutôt que d'utiliser ces attributs, l'utilisation du CSS est conseillé.<br>
+
+			À titre de comparaison, voici la même image avec une largeur fixée à 200, avec comme source une soit l'image au format png soit l'image au format svg :
+			</p>
+			<br>
+			<img src="http://www.w3.org/html/logo/downloads/HTML5_Logo_32.png" alt="logo du w3c format pgn 32x32 redimensionné à 200x200" width="200">
+			<img src="http://www.w3.org/html/logo/downloads/HTML5_Logo.svg" alt="logo du w3c format svg redimensionné à 200 de largeur" width="200">
+			<br>
+		</section>
+		<section id="liensimages">
+			<h3>des liens sur des images</h3>
+			<br>
+
+			<p>Il est possible de placer une image dans un lien, l'image devient alors cliquable. L'example ci-dessous est un lien vers le validateur du W3C pour tester cette page :
+			</p>
+			<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/html/logo/downloads/HTML5_LOGO.svg" alt="logo du w3c format svg redimmensionné à 50 de largeur" width="50"></a><br>
+			dont le code est :
+			<samp>
+			&lt;a href="http://validator.w3.org/check?uri=referer"&gt;&lt;img src="http://www.w3.org/html/logo/downloads/HTML5_Logo.svg" alt="logo du w3c format svg redimensionné à 50 de largeur" width="50" /&gt;&lt;/a&gt;
+			</samp>
+			<br>
+		</section>
+		<section id="lienscs">
+			<h3>des liens avec des caractères spéciaux</h3>
+
+			<p>
+			Pour les liens contenant des caractéres spéciaux html comme & ou des caractères spéciaux pour une url comme un espace encodé %20, il est conseillé de les écrire avec l'encodage.
+			</p>
+			<samp>
+
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;le code suivant <br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="accent&amp;.html"&gt;lien vers accent&amp;.html&lt;/a&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;donne le résultat :<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://deptinfo.unice.fr/~renevier/introweb/tps/tp1/accent&.html">lien vers accent&.html </a><br>
+			<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;et le code suivant<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="emploi%20du%20temps.html"&gt;lien vers emploi du temps.html&lt;/a&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;donne le résultat :<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://deptinfo.unice.fr/~renevier/introweb/tps/tp1/emploi%20du%20temps.html">lien vers emploi du temps.html </a><br>
+			</samp>
+		</section>
+		<footer>
+			<ul>
+				<li>edt 2015-2016 s1 L1 SF Maths / Maths info</li>
+				<li>edt 2015-2016 s1 L1 SF Info</li>
+			</ul>
+		</footer>
+	</body>
+</html>
