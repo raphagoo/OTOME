@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="choix.css">
+    <title>Startup</title>
+    <script type="text/javascript" src="jquery.js">
+    </script>
+  </head>
+  <body>
+    <div class="choix" id="choix1">
+      choix 1
+    </div>
+    <div class="choix" id="choix2">
+      choix 2
+    </div>
+    <div class="img" id="img1">
+    </div>
+    <p class="emplacement" id="emplacementtext1"></p>
+    <div class="img" id="img2">
+    </div>
+    <p class="emplacement" id="emplacementtext2"></p>
+
+    <button id="validation">Place au choix</button>
+    <script>
+      var text1 = ["dialogue1","dialogue2","dialogue3","dialogue4"];
+      var text2 = ["dialogue5","dialogue6","dialogue7","dialogue8"];
+      var i = 0;
+      $('#choix1').click(function(){
+        $('.choix').hide();
+        $('#img1').show();
+        $('#emplacementtext1').show();
+        document.getElementById("emplacementtext1").innerHTML = text1[0];
+        console.log("premier i="+i);
+        $("#emplacementtext1").unbind().click(function(){
+          if (i < text1.length-1){
+            i = i+1;
+            document.getElementById("emplacementtext1").innerHTML = text1[i];
+          }
+          else{
+            $('#emplacementtext1').empty();
+            i = 0;
+          }
+        });
+      });
+      $('#choix2').click(function(){
+        $('.choix').hide();
+        $('#img2').show();
+        $('#emplacementtext2').show();
+        document.getElementById("emplacementtext2").innerHTML = text2[0];
+        $("#emplacementtext2").unbind().click(function(){
+          if (i < text2.length-1){
+            document.getElementById("emplacementtext2").innerHTML = text2[i+1];
+            i = i+1;
+          }
+          else{
+            $('#emplacementtext2').empty();
+            i = 0;
+          }
+        });
+      });
+      $('#validation').click(function(){
+        $('.choix').show();
+        $('.img').hide();
+        $('.emplacement').hide();
+      });
+    </script>
+  </body>
+</html>
