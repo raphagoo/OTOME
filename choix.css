@@ -16,3 +16,54 @@
 #emplacementtext2{
   display: none;
 }
+#choix2-1-1,#choix2-1-2,#choix2-2-1,#choix2-2-2{
+  display: none;
+}
+#img11{
+  width: 700px;
+  height: 700px;
+  background-color: purple;
+  display: none;
+}
+#img12{
+  width: 700px;
+  height: 700px;
+  background-color: blue;
+  display: none;
+}
+#img21{
+  width: 700px;
+  height: 700px;
+  background-color: orange;
+  display: none;
+}
+#img22{
+  width: 700px;
+  height: 700px;
+  background-color: yellow;
+  display: none;
+}
+#img111{
+  width: 700px;
+  height: 700px;
+  background-color: black;
+  display: none;
+}
+#img112{
+  width: 700px;
+  height: 700px;
+  background-color: grey;
+  display: none;
+}
+#img211{
+  width: 700px;
+  height: 700px;
+  background-color: brown;
+  display: none;
+}
+#img212{
+  width: 700px;
+  height: 700px;
+  background-color: white;
+  display: none;
+}
