@@ -7,35 +7,88 @@
     <script type="text/javascript" src="jquery.js">
     </script>
   </head>
-  <body>
-    <div class="choix" id="choix1">
-      choix 1
-    </div>
-    <div class="choix" id="choix2">
-      choix 2
-    </div>
+  <body onload="click_choix(text1, text2);">
+      <div class="choix" id="choix1">
+        choix 1
+      </div>
+      <div class="choix" id="choix2">
+        choix 2
+      </div>
     <div class="img" id="img1">
+    </div>
+    <div class="img" id="img11">
+    </div>
+    <div class="img" id="img12">
+    </div>
+    <div class="img" id="img111">
+    </div>
+    <div class="img" id="img112">
+    </div>
+    <div class="img" id="img21">
+    </div>
+    <div class="img" id="img22">
+    </div>
+    <div class="img" id="img211">
+    </div>
+    <div class="img" id="img212">
     </div>
     <p class="emplacement" id="emplacementtext1"></p>
     <div class="img" id="img2">
     </div>
     <p class="emplacement" id="emplacementtext2"></p>
 
+
     <button id="validation">Place au choix</button>
     <script>
       var text1 = ["dialogue1","dialogue2","dialogue3","dialogue4"];
       var text2 = ["dialogue5","dialogue6","dialogue7","dialogue8"];
       var i = 0;
+      var compteur = 0;
+      var choixprec = 0;
+      function click_choix(texta, textb){
       $('#choix1').click(function(){
+        compteur = compteur+1;
         $('.choix').hide();
-        $('#img1').show();
         $('#emplacementtext1').show();
-        document.getElementById("emplacementtext1").innerHTML = text1[0];
-        console.log("premier i="+i);
+        switch(compteur){
+          case 1:
+            $('#img1').show();
+            choixprec = 1;
+          break;
+          case 2:
+            text1.splice(0, 4);
+            text2.splice(0, 4);
+            if (choixprec == 1){
+            choixprec = 1;
+            $('#img11').show();
+            text1.push("dialogue1.1","dialogue1.2","dialogue1.3","dialogue1.4");
+            }
+            else{
+            choixprec = 1;
+            $('#img12').show();
+            text1.push("dialogue1.5","dialogue1.6","dialogue1.7","dialogue1.8");
+            }
+          break;
+          case 3:
+            text1.splice(0, 4);
+            text2.splice(0, 4);
+            if (choixprec == 1){
+            choixprec = 1;
+            $("#img111").show();
+            text1.push("dialogue1.1.1","dialogue1.1.2","dialogue1.1.3","dialogue1.1.4");
+            }
+            else{
+            choixprec = 1;
+            $("#img112").show();
+            text2.push("dialogue1.2.5","dialogue1.2.6","dialogue1.2.7","dialogue1.2.8");
+            }
+          break;
+        }
+        document.getElementById("emplacementtext1").innerHTML = texta[0];
         $("#emplacementtext1").unbind().click(function(){
           if (i < text1.length-1){
             i = i+1;
-            document.getElementById("emplacementtext1").innerHTML = text1[i];
+            document.getElementById("emplacementtext1").innerHTML = texta[i];
           }
           else{
             $('#emplacementtext1').empty();
@@ -44,26 +97,62 @@
         });
       });
       $('#choix2').click(function(){
+        compteur = compteur+1;
         $('.choix').hide();
-        $('#img2').show();
         $('#emplacementtext2').show();
-        document.getElementById("emplacementtext2").innerHTML = text2[0];
+        switch(compteur){
+          case 1:
+            $('#img2').show();
+            choixprec = 2;
+          break;
+          case 2:
+            text1.splice(0, 4);
+            text2.splice(0, 4);
+            if (choixprec == 1){
+            choixprec = 2;
+            $('#img21').show();
+            text2.push("dialogue2.1","dialogue2.2","dialogue2.3","dialogue2.4");
+            }
+            else{
+            choixprec = 2;
+            $('#img22').show();
+            text2.push("dialogue2.5","dialogue2.6","dialogue2.7","dialogue2.8");
+            }
+          break;
+          case 3:
+            text1.splice(0, 4);
+            text2.splice(0, 4);
+            if (choixprec == 1){
+            choixprec = 2;
+            $("#img211").show();
+            text2.push("dialogue2.1.1","dialogue2.1.2","dialogue2.1.3","dialogue2.1.4");
+            }
+            else{
+            choixprec = 2;
+            $("#img212").show();
+            text2.push("dialogue2.2.5","dialogue2.2.6","dialogue2.2.7","dialogue2.2.8");
+            }
+          break;
+        }
+        document.getElementById("emplacementtext2").innerHTML = textb[0];
         $("#emplacementtext2").unbind().click(function(){
           if (i < text2.length-1){
-            document.getElementById("emplacementtext2").innerHTML = text2[i+1];
             i = i+1;
+            document.getElementById("emplacementtext2").innerHTML = textb[i];
           }
           else{
             $('#emplacementtext2').empty();
             i = 0;
+
           }
         });
       });
       $('#validation').click(function(){
-        $('.choix').show();
         $('.img').hide();
         $('.emplacement').hide();
+        $('.choix').show();
       });
+    }
     </script>
   </body>
 </html>
