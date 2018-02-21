@@ -3,51 +3,68 @@
   <head>
     <meta charset="utf-8">
     <title>Startup</title>
+    <link rel="stylesheet" href="choix.css">
     <script type="text/javascript"></script>
     <script src="jquery.js"></script>
 
   </head>
   <body>
-      <div class="choix" id="choix1">
-        choix 1
-      </div>
-      <div class="choix" id="choix2">
-        choix 2
-      </div>
-    <div class="img" id="img1">
+    <div class="choix">
+      <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+        <input type="radio" name="choix" value="<?php if (isset($_POST['choix'])){echo ($_POST['choix'].'1');}else{echo '1';}?>"> Choix 1<br>
+        <input type="radio" name="choix" value="<?php if (isset($_POST['choix'])){echo ($_POST['choix'].'2');}else{echo '2';}?>">Choix 2<br>
+        <input type="submit" name="Valider" value="Valider">
+      </form>
     </div>
-    <button id="validation">Place au choix</button>
+    <div id="conteneur">
+    <div class="img" id="img1"></div>
+    <div id="boitedialogue">
+    <div id="dialogue"></div>
+    </div>
+    </div>
+    <button id="boutonchoix">Place au choix</button>
     <?php require('jeuphp.php'); ?>
 <?php echo
     "<script>
-      var compteur = 1;
+      var compteur = 0;
       var choixprec = 0;
-      function click_choix(){
-      $('#choix1').click(function(){
+      function click_choix(){\"";
+        if ($_POST['choix'] == '1' ){
+        echo "\";
+        document.getElementById('boutonchoix').style.visibility='visible';
+        compteur = compteur+1;
         $('.choix').hide();
+        $('.img').show();
+        $('#conteneur').show();
         switch(compteur){
           case 1:
             document.getElementById('img1').innerHTML=\"";
-            avoirinfo("image", "fond", 1);avoirinfo("dialogue","dialogue",1);echo "\";
-            compteur = compteur+1;
+            avoirinfo("image", "fond", $_POST['choix']);echo "\";
+            document.getElementById('dialogue').innerHTML=\"";
+            avoirinfo("dialogue","dialogue",1);echo "\";
           break;
           case 2:
-            $('.img').show();
             document.getElementById('img1').innerHTML=\"";
-            avoirinfo("image", "fond", 3);avoirinfo("dialogue","dialogue",1);echo "\";
+            avoirinfo("image", "fond", 3);echo "\";
+            document.getElementById('dialogue').innerHTML=\"";
+            avoirinfo("dialogue","dialogue",1);echo "\";
             break;
+          }
+          \"";
         }
-      });
-
-      $('#choix2').click(function(){
+      else{
+        echo "\";
+        document.getElementById('boutonchoix').style.visibility='visible';
         $('.choix').hide();
-        $('#emplacementtext2').show();
+        compteur = compteur + 1;
+        $('.img').show();
+        $('#conteneur').show();
         switch(compteur){
           case 1:
-            $('.img').show();
             document.getElementById('img1').innerHTML=\"";
-            avoirinfo("image", "fond", 3);avoirinfo("dialogue","dialogue",1);echo "\";
-            compteur = compteur + 1;
+            avoirinfo("image", "fond", 3);echo "\";
+            document.getElementById('dialogue').innerHTML=\"";
+            avoirinfo("dialogue","dialogue",1);echo "\";
           break;
           case 2:
 
@@ -56,8 +73,12 @@
 
           break;
         }
-        });
-      $('#validation').click(function(){
+
+        \"";
+    }
+    echo "\";
+      $('#boutonchoix').click(function(){
+        $('#conteneur').hide();
         $('.img').hide();
         $('.emplacement').hide();
         $('.choix').show();
