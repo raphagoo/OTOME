@@ -37,22 +37,11 @@
         $('.choix').hide();
         $('.img').show();
         $('#conteneur').show();\"";
-        switch($_POST['choix']){
-          case 1:
             echo "\"
             document.getElementById('img1').innerHTML=\"";
             avoirinfo("image", "fond", $_POST['choix']);echo "\";
             document.getElementById('dialogue').innerHTML=\"";
-            avoirinfo("dialogue","dialogue",1);
-          break;
-          case 11:
-            echo "\"
-            document.getElementById('img1').innerHTML=\"";
-            avoirinfo("image", "fond", $_POST['choix']);echo "\";
-            document.getElementById('dialogue').innerHTML=\"";
-            avoirinfo("dialogue","dialogue",1);
-          break;
-          }
+            avoirinfo("dialogue","dialogue",$_POST['choix']);
     echo "\";
       $('#boutonchoix').click(function(){
         $('#conteneur').hide();
