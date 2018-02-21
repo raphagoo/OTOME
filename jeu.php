@@ -17,11 +17,13 @@
       </form>
     </div>
     <div id="conteneur">
-    <div class="img" id="img1"></div>
-    <div id="boitedialogue">
-    <div id="dialogue"></div>
+      <div class="img" id="img1"></div>
+      <div id="boitedialogue">
+        <div id="dialogue"></div>
+        <div id="test">
+      </div>
     </div>
-    </div>
+  </div>
     <button id="boutonchoix">Place au choix</button>
     <?php require('jeuphp.php'); ?>
 <?php echo
@@ -29,59 +31,34 @@
       var compteur = 0;
       var choixprec = 0;
       function click_choix(){\"";
-        if ($_POST['choix'] == '1' ){
         echo "\";
         document.getElementById('boutonchoix').style.visibility='visible';
         compteur = compteur+1;
         $('.choix').hide();
         $('.img').show();
-        $('#conteneur').show();
-        switch(compteur){
+        $('#conteneur').show();\"";
+        switch($_POST['choix']){
           case 1:
+            echo "\"
             document.getElementById('img1').innerHTML=\"";
             avoirinfo("image", "fond", $_POST['choix']);echo "\";
             document.getElementById('dialogue').innerHTML=\"";
-            avoirinfo("dialogue","dialogue",1);echo "\";
+            avoirinfo("dialogue","dialogue",1);
           break;
-          case 2:
+          case 11:
+            echo "\"
             document.getElementById('img1').innerHTML=\"";
-            avoirinfo("image", "fond", 3);echo "\";
+            avoirinfo("image", "fond", $_POST['choix']);echo "\";
             document.getElementById('dialogue').innerHTML=\"";
-            avoirinfo("dialogue","dialogue",1);echo "\";
-            break;
+            avoirinfo("dialogue","dialogue",1);
+          break;
           }
-          \"";
-        }
-      else{
-        echo "\";
-        document.getElementById('boutonchoix').style.visibility='visible';
-        $('.choix').hide();
-        compteur = compteur + 1;
-        $('.img').show();
-        $('#conteneur').show();
-        switch(compteur){
-          case 1:
-            document.getElementById('img1').innerHTML=\"";
-            avoirinfo("image", "fond", 3);echo "\";
-            document.getElementById('dialogue').innerHTML=\"";
-            avoirinfo("dialogue","dialogue",1);echo "\";
-          break;
-          case 2:
-
-          break;
-          case 3:
-
-          break;
-        }
-
-        \"";
-    }
     echo "\";
       $('#boutonchoix').click(function(){
         $('#conteneur').hide();
         $('.img').hide();
-        $('.emplacement').hide();
         $('.choix').show();
+        document.getElementById('boutonchoix').style.visibility='hidden';
       });
     }
 click_choix();
