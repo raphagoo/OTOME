@@ -1,69 +1,50 @@
-#img1{
-  width: 700px;
-  height: 700px;
-  background-color: green;
+body {
+  margin : 0px;
+  font-family: 'Roboto', sans-serif;
+}
+
+#img1 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#boutonchoix{
   display: none;
 }
-#img2{
-  width: 700px;
-  height: 700px;
-  background-color: red;
+.choix{
   display: none;
 }
-#emplacementtext1{
-  display: none;
+
+#conteneur {
+  position:relative;
+
 }
-#emplacementtext2{
-  display: none;
+
+#boiteimg {
+  position:absolute;
+  margin-left: 15%;
+
 }
-#choix2-1-1,#choix2-1-2,#choix2-2-1,#choix2-2-2{
-  display: none;
+
+#boitedialogue {
+  position:absolute;
+  text-align: center;
+  font-size: 20px;
+  width: 1240px;
+  height: 75px;
+  margin-top : 675px;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+  top: 50%; left: 50%; /* à 50%/50% du parent référent */
+  transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+: 0.5;
 }
-#img11{
-  width: 700px;
-  height: 700px;
-  background-color: purple;
-  display: none;
-}
-#img12{
-  width: 700px;
-  height: 700px;
-  background-color: blue;
-  display: none;
-}
-#img21{
-  width: 700px;
-  height: 700px;
-  background-color: orange;
-  display: none;
-}
-#img22{
-  width: 700px;
-  height: 700px;
-  background-color: yellow;
-  display: none;
-}
-#img111{
-  width: 700px;
-  height: 700px;
+#noir{
   background-color: black;
-  display: none;
-}
-#img112{
-  width: 700px;
-  height: 700px;
-  background-color: grey;
-  display: none;
-}
-#img211{
-  width: 700px;
-  height: 700px;
-  background-color: brown;
-  display: none;
-}
-#img212{
-  width: 700px;
-  height: 700px;
-  background-color: white;
+  width: 1240px;
+  height: 709px;
+  margin-left: auto;
+  margin-right: auto;
+  position:absolute;
   display: none;
 }
